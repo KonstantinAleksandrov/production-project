@@ -14,7 +14,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
         module: {
             rules: buildLoaders(isDev)
         },
-        resolve: buildResolve(),
+        resolve: buildResolve(paths),
         output: {
             filename: '[name].[contenthash].js',
             path: paths.build,
