@@ -8,7 +8,11 @@ const AppRoute = () => {
             <Routes>
                 {routeConfig.map((route)=>{
                     return (
-                        <Route path={route.path} element={route.element} key={route.path}/>
+                        <Route 
+                            path={route.path} 
+                            element={<div className="app__content-wrapper content__wrapper">{route.element}</div>} 
+                            key={route.path}
+                        />
                     )
                 })}
             </Routes>
