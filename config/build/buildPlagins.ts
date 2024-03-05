@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { IBuildOptions } from './types/config'
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 
-export function buildPlagins({paths}: IBuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlagins({paths,isDev}: IBuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
             template: paths.html
@@ -13,6 +13,9 @@ export function buildPlagins({paths}: IBuildOptions): webpack.WebpackPluginInsta
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css'
+        }),
+        new webpack.DefinePlugin({
+            __IS__DEV: JSON.stringify(isDev)
         })
     ]
 }

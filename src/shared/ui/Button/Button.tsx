@@ -13,7 +13,6 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button:FC<IButtonProps> = (props) => {
     const { children, className, theme = ButtonTheme.CLEAR, ...otherProps } = props
-    console.log(className)
     return (
         <button 
             className={ classNames(cls.button, {}, [className,cls[theme]]) }
