@@ -1,11 +1,11 @@
-import path from 'path';
-import webpack from 'webpack';
+import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { IBuildOptions } from './types/config'
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import { type IBuildOptions } from './types/config'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
-export function buildPlagins({paths,isDev}: IBuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+export function buildPlagins ({ paths, isDev }: IBuildOptions): webpack.WebpackPluginInstance[] {
+    const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html
         }),
@@ -18,4 +18,8 @@ export function buildPlagins({paths,isDev}: IBuildOptions): webpack.WebpackPlugi
             __IS__DEV: JSON.stringify(isDev)
         })
     ]
+    if (isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin())
+    }
+    return plugins
 }

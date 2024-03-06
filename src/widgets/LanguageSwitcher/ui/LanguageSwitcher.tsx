@@ -1,4 +1,3 @@
-import cls from './LanguageSwitcher.module.scss'
 import { Button, ButtonTheme } from 'shared/ui/Button'
 import { useTranslation } from 'react-i18next'
 
@@ -13,7 +12,7 @@ export const LanguageSwitcher = () => {
         <div>
             <Button
                 theme={ButtonTheme.CLEAR}
-                onClick={toggleLang} 
+                onClick={toggleLang}
             >
                 {t('RU')}
             </Button>

@@ -5,15 +5,15 @@ import { AppRoute } from './route'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 
-const App = ({}) => {
+const App = () => {
     const { theme } = useTheme()
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar/>
+            <Navbar />
             <div className='app__content'>
-                <Sidebar/>
-                <AppRoute/>
+                <Sidebar />
+                <AppRoute />
             </div>
         </div>
     )

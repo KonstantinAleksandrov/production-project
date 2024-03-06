@@ -1,11 +1,11 @@
-import webpack from 'webpack'
-import { IBuildOptions } from './types/config'
+import type webpack from 'webpack'
+import { type IBuildOptions } from './types/config'
 import { buildPlagins } from './buildPlagins'
 import { buildLoaders } from './buildLoaders'
 import { buildResolve } from './buildResolve'
 import { buildDevServer } from './buildDevServer'
 
-export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
+export function buildWebpackConfig (options: IBuildOptions): webpack.Configuration {
     const { mode, paths, isDev } = options
 
     return {
@@ -22,6 +22,6 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
         },
         plugins: buildPlagins(options),
         devtool: isDev ? 'inline-source-map' : undefined,
-        devServer: buildDevServer(options),
+        devServer: buildDevServer(options)
     }
 }
