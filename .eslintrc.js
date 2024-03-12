@@ -46,5 +46,8 @@ module.exports = {
             'error',
             { markupOnly: true, onlyAttribute: [""] },
         ],
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/prefer-ts-expect-error": "off",
+        "@typescript-eslint/return-await": "off"
     }
 }
