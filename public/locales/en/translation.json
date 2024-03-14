@@ -2,5 +2,7 @@
     "RU": "RU",
     "Главная": "Main",
     "О нас": "About",
-    "toggle": "toggle"
+    "toggle": "toggle",
+    "Перезагрузить": "Reload",
+    "Выбросить ошибку": "Throw some error"
 }
