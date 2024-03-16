@@ -9,7 +9,7 @@ export const LanguageSwitcher = () => {
     }
 
     return (
-        <div>
+        <div data-testid='languageSwitcher'>
             <Button
                 theme={ButtonTheme.CLEAR}
                 onClick={toggleLang}

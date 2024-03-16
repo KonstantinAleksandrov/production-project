@@ -22,6 +22,12 @@ module.exports = {
             "parserOptions": {
                 "sourceType": "script"
             }
+        },
+        {
+            files: ['*.test.*'], 
+            rules: {
+              'i18next/no-literal-string': 'off' 
+            }
         }
     ],
     "parserOptions": {
@@ -48,6 +54,6 @@ module.exports = {
         ],
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/prefer-ts-expect-error": "off",
-        "@typescript-eslint/return-await": "off"
+        "@typescript-eslint/return-await": "off",
     }
 }
