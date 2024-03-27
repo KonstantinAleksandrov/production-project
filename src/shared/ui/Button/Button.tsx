@@ -3,7 +3,8 @@ import { type FC, type ButtonHTMLAttributes } from 'react'
 import { classNames } from 'shared/lib/classNames'
 
 export enum ButtonTheme {
-    CLEAR = 'clear'
+    CLEAR = 'clear',
+    OUTLINE = 'outline'
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
